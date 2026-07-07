@@ -1,0 +1,170 @@
+.episodes-section {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.episode-card {
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+}
+
+.episode-card.featured {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .episode-card.featured {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .episode-card.featured .episode-image-wrapper {
+    width: 50%;
+    height: 100%;
+    min-height: 250px;
+  }
+  
+  .episode-card.featured .episode-info {
+    width: 50%;
+    padding: 2rem;
+  }
+  
+  .episode-card.featured .episode-title {
+    font-size: 1.8rem;
+  }
+}
+
+.episode-image-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.episode-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.episode-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(142, 1, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.play-icon-large {
+  color: white;
+  width: 60px;
+  height: 60px;
+  transform: scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.episode-card:hover .episode-image {
+  transform: scale(1.05);
+}
+
+.episode-card:hover .episode-play-overlay {
+  opacity: 1;
+}
+
+.episode-card:hover .play-icon-large {
+  transform: scale(1);
+}
+
+.episode-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 40px rgba(142, 1, 0, 0.15);
+}
+
+.episode-info {
+  padding: 1.5rem 0.5rem 0.5rem;
+}
+
+.episode-meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.episode-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.listen-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.episode-card:hover .listen-btn {
+  color: var(--text-main);
+}
+
+.view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.view-all-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
