@@ -27,8 +27,8 @@ const VideoSection = () => {
         >
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1200&q=80" 
-            alt="Podcast Video Preview" 
+            src="/coverimg1.PNG" 
+            alt="Featured Episode Cover" 
             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
           />
           
